@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_radius">8dp</dimen>
+    <dimen name="profile_photo">56dp</dimen>
+    <dimen name="drug_icon">48dp</dimen>
+</resources>

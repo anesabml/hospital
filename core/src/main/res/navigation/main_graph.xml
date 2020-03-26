@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/appointments_fragment">
+
+    <fragment
+        android:id="@+id/appointments_fragment"
+        android:name="com.anesabml.hospital.appointments.ui.list.AppointmentsFragment"
+        android:label="@string/title_appointments">
+
+        <argument
+            android:name="patient"
+            app:argType="com.anesabml.hospital.core.model.Patient" />
+
+        <action
+            android:id="@+id/appointments_fragment_to_details_fragment"
+            app:destination="@id/appointments_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/appointments_details_fragment"
+        android:name="com.anesabml.hospital.appointments.ui.details.AppointmentDetailsFragment"
+        android:label="@string/title_appointments_details">
+
+        <argument
+            android:name="appointment"
+            app:argType="com.anesabml.hospital.core.model.Appointment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/prescription_fragment"
+        android:name="com.anesabml.hospital.medicalfile.ui.PrescriptionFragment"
+        android:label="@string/title_prescription">
+
+        <argument
+            android:name="patient"
+            app:argType="com.anesabml.hospital.core.model.Patient" />
+
+        <action
+            android:id="@+id/appointments_fragment_to_details_fragment"
+            app:destination="@id/appointments_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.anesabml.hospital.profile.ui.ProfileFragment"
+        android:label="@string/title_profile">
+
+        <argument
+            android:name="patient"
+            app:argType="com.anesabml.hospital.core.model.Patient" />
+    </fragment>
+</navigation>

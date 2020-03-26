@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hospital</string>
+
+    <string name="login_welcome_msg">Welcome to Abismail Hospital</string>
+
+    <string name="title_login">Login</string>
+    <string name="title_appointments">Appointments</string>
+    <string name="title_appointments_details">Details</string>
+    <string name="title_prescription">Prescription</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_phone">Phone number</string>
+
+    <string name="button_login">Login</string>
+    <string name="menu_cancel">Cancel</string>
+    <string name="menu_edit">Edit</string>
+
+    <string name="error_username">Username must not be empty</string>
+    <string name="error_password">Password must contain at least 8 characters.</string>
+    <string name="error_login">Error, could not login</string>
+    <string name="error_login_user_not_found">Sorry, it looks like you don\'t have an account</string>
+    <string name="error_field_required">Input must not be empty</string>
+    <string name="error_loading_appointments">Could not load appointments</string>
+    <string name="error_canceling_appointment">Error canceling your appointment</string>
+    <string name="error_loading_medical_file">Couldn\'t load your medical file</string>
+
+    <string name="success_canceling_appointment">Appointment canceled</string>
+
+    <string name="doc_name">Dr. %s %s</string>
+    <string name="appointment_information">Information</string>
+    <string name="error_try_again">Error, Try again</string>
+    <string name="success_saving_new_info">New information has been updated successfully</string>
+
+
+</resources>

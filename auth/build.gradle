@@ -1,0 +1,65 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation project(Modules.core)
+
+    implementation(Dependencies.kotlin)
+    implementation(Dependencies.appcompat)
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.material)
+    implementation(Dependencies.constraintLayout)
+    implementation(Dependencies.fragment)
+
+    implementation(Dependencies.navigationFragment)
+
+    implementation(Dependencies.lifecycleViewModel)
+    implementation(Dependencies.lifecycleLiveData)
+    kapt(Dependencies.lifecycleCompiler)
+
+    implementation(Dependencies.kotlinCoroutinesCore)
+    implementation(Dependencies.kotlinCoroutinesAndroid)
+
+    implementation(Dependencies.dagger)
+    kapt(Dependencies.daggerCompiler)
+
+    implementation(Dependencies.retrofit)
+
+    implementation(Dependencies.timber)
+
+    testImplementation(TestDependencies.junit)
+    androidTestImplementation(TestDependencies.extJunitKtx)
+    androidTestImplementation(TestDependencies.espressoCore)
+}

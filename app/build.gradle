@@ -1,0 +1,75 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        applicationId "com.anesabml.hospital"
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    // To inline the bytecode built with JVM target 1.8 into
+    // bytecode that is being built with JVM target 1.6. (e.g. navArgs)
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation project(Modules.core)
+    implementation project(Modules.auth)
+    implementation project(Modules.appointments)
+    implementation project(Modules.medicalfile)
+    implementation project(Modules.profile)
+
+    implementation(Dependencies.kotlin)
+    implementation(Dependencies.appcompat)
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.material)
+    implementation(Dependencies.constraintLayout)
+
+    implementation(Dependencies.navigationFragment)
+    implementation(Dependencies.navigationUi)
+
+    implementation(Dependencies.lifecycleViewModel)
+    implementation(Dependencies.lifecycleLiveData)
+    kapt(Dependencies.lifecycleCompiler)
+
+    implementation(Dependencies.dagger)
+    kapt(Dependencies.daggerCompiler)
+
+    implementation(Dependencies.retrofit)
+
+    implementation(Dependencies.timber)
+
+    testImplementation(TestDependencies.junit)
+    androidTestImplementation(TestDependencies.extJunitKtx)
+    androidTestImplementation(TestDependencies.espressoCore)
+}
