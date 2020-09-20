@@ -16,6 +16,10 @@ class LoginRemoteDataSource @Inject constructor(retrofit: Retrofit) {
         // fixme
 //        loginService.login(username, password).body()?.toDomain()
         delay(1000)
-        return PatientEntity.empty().toDomain()
+        return if (username.isEmpty() || username == "anesabml" || password.isEmpty()) {
+            null
+        } else {
+            PatientEntity.empty().toDomain()
+        }
     }
 }

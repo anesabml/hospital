@@ -31,9 +31,9 @@ data class DoctorEntity(
     companion object {
         fun empty() = DoctorEntity(
             1,
-            "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-            "Anes",
-            "Abismail",
+            "https://www.nj.com/resizer/h8MrN0-Nw5dB5FOmMVGMmfVKFJo=/450x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg",
+            "Saoudi",
+            "Mohamed",
             "anesabml",
             "1234",
             "anes@abi.com",

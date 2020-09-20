@@ -7,6 +7,8 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.navArgs
+import com.anesabml.hospital.core.extensions.hide
+import com.anesabml.hospital.core.extensions.show
 import com.anesabml.hospital.core.extensions.showSnackBar
 import com.anesabml.hospital.core.model.Patient
 import com.anesabml.hospital.core.utils.Result
@@ -74,10 +76,15 @@ class ProfileFragment : Fragment() {
 
     private fun updateState(state: Result<Patient>) {
         when (state) {
+            Result.Loading -> {
+                binding.progressView.show()
+            }
             is Result.Success -> {
+                binding.progressView.hide()
                 binding.root.showSnackBar(R.string.success_saving_new_info)
             }
             is Result.Error -> {
+                binding.progressView.hide()
                 binding.root.showSnackBar(R.string.error_try_again)
             }
         }

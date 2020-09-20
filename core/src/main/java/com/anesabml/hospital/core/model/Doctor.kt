@@ -30,9 +30,9 @@ class Doctor(
     companion object {
         fun empty() = Doctor(
             1,
-            "",
-            "Anes",
-            "Abismail",
+            "https://www.nj.com/resizer/h8MrN0-Nw5dB5FOmMVGMmfVKFJo=/450x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg",
+            "Saoudi",
+            "Mohamed",
             "anesabml",
             "1234",
             "anes@abi.com",

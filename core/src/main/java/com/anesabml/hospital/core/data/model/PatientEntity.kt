@@ -50,7 +50,7 @@ class PatientEntity(
     companion object {
         fun empty() = PatientEntity(
             1,
-            "",
+            "https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png",
             "Anes",
             "Abismail",
             "anesabml",

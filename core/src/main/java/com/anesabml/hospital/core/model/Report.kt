@@ -30,14 +30,10 @@ class Report(
                 Date(),
                 ReportType.Ordonnance,
                 """
-                    Drug Name 1
-                    Drug Name 2 
-                    Drug Name 3 
-                    Drug Name 4
-                    Drug Name 5
-                    Drug Name 6
-                    Drug Name 7
-                    Drug Name 8
+                    Medication Name 1
+                    Medication Name 2 
+                    Medication Name 3 
+                    Medication Name 4
                 """.trimIndent(),
                 Doctor.empty()
             )

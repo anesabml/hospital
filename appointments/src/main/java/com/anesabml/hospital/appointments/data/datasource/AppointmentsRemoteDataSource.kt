@@ -13,13 +13,12 @@ import javax.inject.Inject
 class AppointmentsRemoteDataSource @Inject constructor(retrofit: Retrofit) {
 
     private val appointmentsService = retrofit.create(AppointmentsService::class.java)
-
+    private val appointments = mutableListOf<AppointmentEntity>()
     suspend fun getAppointments(id: Int): List<AppointmentEntity> {
 //        appointmentsService.getAppointments(id)
         delay(1000)
-        val output = mutableListOf<AppointmentEntity>()
-        for (i in 0..10) {
-            output.add(
+        for (i in 0..2) {
+            appointments.add(
                 AppointmentEntity(
                     i,
                     PatientEntity.empty(),
@@ -29,9 +28,12 @@ class AppointmentsRemoteDataSource @Inject constructor(retrofit: Retrofit) {
                 )
             )
         }
-        return output
+        return appointments
     }
 
-    suspend fun cancelAppointment(id: Int): ServerResponse =
-        appointmentsService.cancelAppointment(id)
+    suspend fun cancelAppointment(id: Int): ServerResponse {
+        delay(1_000)
+        return ServerResponse()
+//        return appointmentsService.cancelAppointment(id)
+    }
 }
